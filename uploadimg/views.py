@@ -98,7 +98,8 @@ def index(request):
             img_path=os.path.join(path_elements[1], path_elements[2], path_elements[3])
             # orig = cv2.imread(img_path)
 
-            model = MODELS[obj.detector_model](pretrained=True)
+            # model = MODELS[obj.detector_model](pretrained=True)
+            model = MODELS[obj.detector_model]
             model.eval()
             num_of_cars=detect_objects(img_path,model)
 
