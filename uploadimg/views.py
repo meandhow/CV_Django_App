@@ -85,8 +85,7 @@ def detect_objects(img_path,model):
 
 def index(request):
     """Process images uploaded by users"""
-    model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
-    model.eval()
+
     if request.method == 'POST':
         form = ImageForm(request.POST, request.FILES)
         if form.is_valid():
